@@ -81,7 +81,7 @@ function App() {
 
       {/* About Section */}
       <section id="about" className="py-24">
-        <h2 className="text-3xl text-foreground-light font-bold mb-8 flex items-center gap-4">
+        <h2 className="text-xl sm:text-3xl text-foreground-light font-bold mb-8 flex items-center gap-4">
           <span className="text-primary font-mono">01.</span>
           About Me
           <div className="flex-1 h-px bg-border"></div>
@@ -145,7 +145,7 @@ function App() {
       {/* Projects Section */}
       <section id="projects" className="py-24">
         <h2
-          className="text-3xl font-bold mb-12 flex items-center gap-4"
+          className="text-xl sm:text-3xl font-bold mb-12 flex items-center gap-4"
           style={{ color: "#CCD6F6" }}
         >
           <span className="text-primary font-mono">02.</span>
@@ -187,7 +187,7 @@ function App() {
       {/* Contact Section */}
       <section id="contact" className="py-24">
         <h2
-          className="text-3xl font-bold mb-8 flex items-center gap-4"
+          className="text-xl sm:text-3xl font-bold mb-8 flex items-center gap-4"
           style={{ color: "#CCD6F6" }}
         >
           <span className="text-primary font-mono">03.</span>
