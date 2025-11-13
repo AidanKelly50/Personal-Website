@@ -185,10 +185,10 @@ function App() {
       <footer className="py-12">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-center gap-6 mb-6">
-            <a href="https://github.com" className="hover:opacity-70 transition-opacity">
+            <a href="https://github.com/AidanKelly50/" className="hover:opacity-70 transition-opacity">
               <Github size={24} className="text-muted-foreground" />
             </a>
-            <a href="https://linkedin.com" className="hover:opacity-70 transition-opacity">
+            <a href="https://www.linkedin.com/in/aidan-j-kelly/" className="hover:opacity-70 transition-opacity">
               <Linkedin size={24} className="text-muted-foreground" />
             </a>
             <a href="mailto:kelly.aida@northeastern.edu" className="hover:opacity-70 transition-opacity">
