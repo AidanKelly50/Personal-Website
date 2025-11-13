@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Github, Linkedin, Mail, ExternalLink, Code2 } from 'lucide-react';
+import proHeadshot from "@/assets/Headshot.jpeg"
 
 function App() {
   const projects = [
@@ -111,7 +112,7 @@ function App() {
             </div>
             <div className="flex items-center justify-center">
               <div className="w-64 h-64 rounded-lg flex items-center justify-center border-2 border-primary bg-primary/10">
-                <img src="src/assets/Headshot.jpeg" />
+                <img src={proHeadshot} />
               </div>
             </div>
           </div>
