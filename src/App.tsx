@@ -62,7 +62,7 @@ function App() {
           </h2>
           <p className="text-lg mb-8 max-w-2xl leading-relaxed text-muted-foreground">
             I'm a software developer with a passion for pushing the boundaries of technology. 
-            I like building programs that solve real-world problems and make people lives better.
+            I like building programs that solve real-world problems and make people's lives better.
           </p>
           <div className="flex gap-4">
             <Button 
@@ -191,7 +191,7 @@ function App() {
             <a href="https://linkedin.com" className="hover:opacity-70 transition-opacity">
               <Linkedin size={24} className="text-muted-foreground" />
             </a>
-            <a href="mailto:hello@aidankelly.com" className="hover:opacity-70 transition-opacity">
+            <a href="mailto:kelly.aida@northeastern.edu" className="hover:opacity-70 transition-opacity">
               <Mail size={24} className="text-muted-foreground" />
             </a>
           </div>
