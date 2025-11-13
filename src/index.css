@@ -1,10 +1,23 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+@font-face {
+  font-family: "AKInter";
+  src: url("/fonts/Inter/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 100 900; /* Supports all weights */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AKInter";
+  src: url("/fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+}
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: AKInter, Helvetica, Avenir, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -13,49 +26,51 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+
   --radius: 0.625rem;
-  
+
   /* Custom Navy/Mint Palette */
-  --background: #0A192F; /* Navy background */
-  --foreground: #E6F1FF; /* Light text */
-  --foreground-light: #CCD6F6; /* Lighter text for headings */
+  --background: #0a192f; /* Navy background */
+  --foreground: #e6f1ff; /* Light text */
+  --foreground-light: #ccd6f6; /* Lighter text for headings */
   --card: #112240; /* Slightly lighter navy for cards */
-  --card-foreground: #E6F1FF;
+  --card-foreground: #e6f1ff;
   --popover: #112240;
-  --popover-foreground: #E6F1FF;
-  --primary: #64FFDA; /* Mint green accent */
-  --primary-foreground: #0A192F; /* Navy text on mint */
+  --popover-foreground: #e6f1ff;
+  --primary: #64ffda; /* Mint green accent */
+  --primary-foreground: #0a192f; /* Navy text on mint */
   --secondary: #495670; /* Dark gray */
-  --secondary-foreground: #E6F1FF;
+  --secondary-foreground: #e6f1ff;
   --muted: #495670; /* Dark gray */
-  --muted-foreground: #8892B0; /* Mid gray */
-  --accent: #64FFDA; /* Mint green */
-  --accent-foreground: #0A192F;
+  --muted-foreground: #8892b0; /* Mid gray */
+  --accent: #64ffda; /* Mint green */
+  --accent-foreground: #0a192f;
   --destructive: oklch(0.577 0.245 27.325);
   --border: #495670; /* Dark gray for borders */
   --input: #495670;
-  --ring: #64FFDA; /* Mint for focus rings */
-  
+  --ring: #64ffda; /* Mint for focus rings */
+
   /* Keep chart colors as is */
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  
+
   /* Sidebar colors */
   --sidebar: #112240;
-  --sidebar-foreground: #E6F1FF;
-  --sidebar-primary: #64FFDA;
-  --sidebar-primary-foreground: #0A192F;
+  --sidebar-foreground: #e6f1ff;
+  --sidebar-primary: #64ffda;
+  --sidebar-primary-foreground: #0a192f;
   --sidebar-accent: #495670;
-  --sidebar-accent-foreground: #E6F1FF;
+  --sidebar-accent-foreground: #e6f1ff;
   --sidebar-border: #495670;
-  --sidebar-ring: #64FFDA;
+  --sidebar-ring: #64ffda;
 }
 
-body, html, #root {
+body,
+html,
+#root {
   margin: 0;
   padding: 0;
   width: 100%;
