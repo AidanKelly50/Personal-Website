@@ -1,13 +1,8 @@
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Github, Linkedin, Mail, ExternalLink, Code2 } from "lucide-react";
+import { skills, type Skill } from "@/constants/skills";
 
 function App() {
   const projects = [
@@ -31,21 +26,6 @@ function App() {
     },
   ];
 
-  const skills = [
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "Node.js",
-    "Python",
-    "PostgreSQL",
-    "MongoDB",
-    "Docker",
-    "AWS",
-    "Git",
-    "REST APIs",
-    "GraphQL",
-  ];
-
   return (
     <div className="min-h-screen w-full bg-background px-4 sm:px-8 md:px-32 xl:px-64">
       {/* Navigation */}
@@ -56,10 +36,7 @@ function App() {
             <span className="text-xl font-bold">AK</span>
           </div>
           <div className="flex gap-6">
-            <a
-              href="#about"
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
+            <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">
               About
             </a>
             <a
@@ -84,19 +61,15 @@ function App() {
           <div className="mb-4 text-primary">
             <p className="text-lg font-mono">Hi, my name is</p>
           </div>
-          <h1
-            className="text-6xl md:text-7xl font-bold mb-4"
-            style={{ color: "#CCD6F6" }}
-          >
+          <h1 className="text-6xl md:text-7xl font-bold mb-4" style={{ color: "#CCD6F6" }}>
             Aidan Kelly
           </h1>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-muted-foreground">
             I solve problems using code.
           </h2>
           <p className="text-lg mb-8 max-w-2xl leading-relaxed text-muted-foreground">
-            I'm a software developer with a passion for pushing the boundaries
-            of technology. I like building programs that solve real-world
-            problems and make people's lives better.
+            I'm a software developer with a passion for pushing the boundaries of technology. I like
+            building programs that solve real-world problems and make people's lives better.
           </p>
           <div className="flex gap-4">
             <Button size="lg" variant="outline" className="">
@@ -113,41 +86,57 @@ function App() {
           About Me
           <div className="flex-1 h-px bg-border"></div>
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-8">
+          <div className="flex justify-center">
+            <img
+              src="/Headshot.jpeg"
+              className="w-48 sm:w-64 xl:w-72 2xl:w-84 h-48 sm:h-64 xl:h-72 2xl:h-84 rounded-lg flex items-center justify-center border-3 border-primary mt-2"
+            />
+          </div>
           <div>
             <p className="mb-4 leading-relaxed text-muted-foreground">
-              I'm a 3rd year Computer Science and Business Administration
-              (concentration in Financial Technology) student at Northeastern
-              University.
+              I'm a 3rd year student at Northeastern University majoring in Computer Science and
+              Business Administration (concentration in Financial Technology). I am looking for a
+              career in Full-Stack Software Development, Quantitative Finance, or Financial
+              Programming.
             </p>
             <p className="mb-6 leading-relaxed text-muted-foreground">
-              When I'm not coding, you can find me playing or watching hockey,
-              at the beach, or with friends.
+              I like building programs that solve problems, and am always trying to learn new
+              languages, tools, or systems. When I'm not coding, you can find me playing or watching
+              hockey, cooking, at the beach, or with my friends and family.
             </p>
-            <h3
-              className="text-lg font-semibold mb-3"
-              style={{ color: "#CCD6F6" }}
-            >
+            <h3 className="text-lg font-semibold" style={{ color: "#CCD6F6" }}>
               Technologies I work with:
             </h3>
+            <h5 className="text-muted-foreground font-semibold mt-3 mb-1">Programming Languages</h5>
             <div className="flex flex-wrap gap-2">
-              {skills.map((skill) => (
-                <Badge
-                  key={skill}
-                  variant="outline"
-                  className="border-border text-muted-foreground bg-transparent"
-                >
-                  {skill}
-                </Badge>
-              ))}
+              {skills
+                .filter((s) => s.type === "language")
+                .map((s) => (
+                  <Badge key={s.name} variant={s.type}>
+                    {s.name}
+                  </Badge>
+                ))}
             </div>
-          </div>
-          <div className="flex items-center justify-center">
-            <div className="">
-              <img
-                src="/Headshot.jpeg"
-                className="w-64 h-64 rounded-lg flex items-center justify-center border-3 border-foreground"
-              />
+            <h5 className="text-muted-foreground font-semibold mt-3 mb-1">Tech Stack</h5>
+            <div className="flex flex-wrap gap-2">
+              {skills
+                .filter((s) => s.type === "stack")
+                .map((s) => (
+                  <Badge key={s.name} variant={s.type}>
+                    {s.name}
+                  </Badge>
+                ))}
+            </div>
+            <h5 className="text-muted-foreground font-semibold mt-3 mb-1">Tools</h5>
+            <div className="flex flex-wrap gap-2">
+              {skills
+                .filter((s) => s.type === "tool")
+                .map((s) => (
+                  <Badge key={s.name} variant={s.type}>
+                    {s.name}
+                  </Badge>
+                ))}
             </div>
           </div>
         </div>
@@ -172,16 +161,11 @@ function App() {
               <CardHeader>
                 <div className="flex justify-between items-start mb-2">
                   <Code2 size={32} className="text-primary" />
-                  <a
-                    href={project.link}
-                    className="hover:opacity-70 transition-opacity"
-                  >
+                  <a href={project.link} className="hover:opacity-70 transition-opacity">
                     <ExternalLink size={20} className="text-muted-foreground" />
                   </a>
                 </div>
-                <CardTitle style={{ color: "#CCD6F6" }}>
-                  {project.title}
-                </CardTitle>
+                <CardTitle style={{ color: "#CCD6F6" }}>{project.title}</CardTitle>
                 <CardDescription className="text-muted-foreground">
                   {project.description}
                 </CardDescription>
@@ -189,10 +173,7 @@ function App() {
               <CardContent>
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="text-xs font-mono text-muted-foreground"
-                    >
+                    <span key={tech} className="text-xs font-mono text-muted-foreground">
                       {tech}
                     </span>
                   ))}
@@ -215,9 +196,8 @@ function App() {
         </h2>
         <div className="text-center">
           <p className="text-lg mb-8 leading-relaxed text-muted-foreground">
-            I'm currently open to new opportunities and interesting projects.
-            Whether you have a question or just want to say hi, feel free to
-            reach out!
+            I'm currently open to new opportunities and interesting projects. Whether you have a
+            question or just want to say hi, feel free to reach out!
           </p>
           <Button
             size="lg"
