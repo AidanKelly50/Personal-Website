@@ -38,6 +38,7 @@ export const skills: Skill[] = [
   { name: "Claude", type: "tool" },
   { name: "IntelliJ", type: "tool" },
   { name: "PyCharm", type: "tool" },
+  { name: "Cloudflare", type: "tool" },
   { name: "Docker", type: "tool" },
   { name: "Microsoft Excel", type: "tool" },
   { name: "Eclipse", type: "tool" },

@@ -3,29 +3,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Github, Linkedin, Mail, ExternalLink, Code2 } from "lucide-react";
 import { skills } from "@/constants/skills";
+import { projects } from "@/constants/projects";
 
 function App() {
-  const projects = [
-    {
-      title: "E-Commerce Platform",
-      description: "Full-stack application with React, Node.js, and PostgreSQL",
-      tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
-      link: "#",
-    },
-    {
-      title: "Task Management App",
-      description: "Real-time collaboration tool with WebSocket integration",
-      tech: ["TypeScript", "Express", "MongoDB", "Socket.io"],
-      link: "#",
-    },
-    {
-      title: "API Gateway Service",
-      description: "Microservices architecture with rate limiting and auth",
-      tech: ["Go", "Redis", "Docker", "Kubernetes"],
-      link: "#",
-    },
-  ];
-
   return (
     <div className="min-h-screen w-full bg-background px-4 sm:px-8 md:px-32 xl:px-64">
       {/* Navigation */}
@@ -160,18 +140,25 @@ function App() {
             >
               <CardHeader>
                 <div className="flex justify-between items-start mb-2">
-                  <Code2 size={32} className="text-primary" />
-                  <a href={project.link} className="hover:opacity-70 transition-opacity">
-                    <ExternalLink size={20} className="text-muted-foreground" />
-                  </a>
+                  {project.icon}
+                  {project.link && (
+                    <a href={project.link} className="hover:opacity-70 transition-opacity mx-4">
+                      <ExternalLink size={20} className="text-muted-foreground" />
+                    </a>
+                  )}
+                  {project.repo && (
+                    <a href={project.repo} className="hover:opacity-70 transition-opacity">
+                      <Github size={20} className="text-muted-foreground" />
+                    </a>
+                  )}
                 </div>
                 <CardTitle style={{ color: "#CCD6F6" }}>{project.title}</CardTitle>
                 <CardDescription className="text-muted-foreground">
                   {project.description}
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
+              <CardContent className=" mt-auto">
+                <div className="flex flex-wrap gap-3">
                   {project.tech.map((tech) => (
                     <span key={tech} className="text-xs font-mono text-muted-foreground">
                       {tech}
