@@ -1,4 +1,4 @@
-import { CalendarDays, Code2, Earth, Grid2x2Check } from "lucide-react";
+import { CalendarDays, Earth, Grid2x2Check } from "lucide-react";
 
 export interface Skill {
   title: string;
