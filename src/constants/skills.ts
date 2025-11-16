@@ -26,6 +26,7 @@ export const skills: Skill[] = [
   { name: "Pandas", type: "stack" },
   { name: "NumPy", type: "stack" },
   { name: "FastAPI", type: "stack" },
+  { name: "SQLAlchemy", type: "stack" },
   { name: "Poetry", type: "stack" },
   { name: "Node.js", type: "stack" },
   { name: "Flask", type: "stack" },
